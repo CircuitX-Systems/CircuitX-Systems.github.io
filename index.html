@@ -1,13 +1,28 @@
 ---
-# The front matter is minimal because we set defaults in _config.yml
+title: The Foundation for Your Innovation
+description: We engineer robust, end-to-end solutions, seamlessly fusing hardware and software.
 ---
-<section class="hero section">
-    <div class="container">
+
+<!-- Hero Section with Background Image -->
+<div class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
         <h1>Keystone Integrated Systems</h1>
-        <p class="motto">The <strong>Foundation</strong> for Your <strong>Innovation.</strong></p>
-        <p class="hero-description">We engineer robust, end-to-end solutions, seamlessly fusing hardware and software to bring your most complex technological ideas to life.</p>
-        <a href="{{ '/portfolio.html' | relative_url }}" class="button-primary">View Our Work</a>
+        <p class="hero-description">The Foundation for Your Innovation. We engineer robust, end-to-end solutions, seamlessly fusing hardware and software.</p>
+        <a href="{{ '/blog.html' | relative_url }}" class="button-primary">Explore Our Insights</a>
+    </div>
+</div>
+
+<!-- Latest Post Section (This part stays the same) -->
+<section class="section">
+    <div class="container">
+        <h2>From the Blog</h2>
+        {% assign latest_post = site.posts.first %}
+        <div class="post-item-featured">
+            <h3><a href="{{ latest_post.url | relative_url }}">{{ latest_post.title }}</a></h3>
+            <p class="post-meta">{{ latest_post.date | date: "%B %d, %Y" }}</p>
+            <p>{{ latest_post.excerpt }}</p>
+            <a href="{{ latest_post.url | relative_url }}" class="button-secondary">Read More →</a>
+        </div>
     </div>
 </section>
-
-<!-- You can add more homepage content here if you wish -->
