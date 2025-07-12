@@ -3,7 +3,7 @@ title: The Foundation for Your Innovation
 description: We engineer robust, end-to-end solutions, seamlessly fusing hardware and software.
 ---
 
-<!-- Hero Section with Background Image -->
+<!-- Hero Section with Background Image (This part stays the same) -->
 <div class="hero-section">
     <div class="hero-overlay"></div>
     <div class="container hero-content">
@@ -13,10 +13,51 @@ description: We engineer robust, end-to-end solutions, seamlessly fusing hardwar
     </div>
 </div>
 
-<!-- Latest Post Section (This part stays the same) -->
+<!-- NEW: Services Overview Section -->
+<section class="section section-highlight">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Core Services</h2>
+            <p>We provide end-to-end engineering solutions to bring your ideas to life.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Embedded Systems</h3>
+                <p>Custom firmware, real-time operating systems (RTOS), and hardware integration for reliable, high-performance devices.</p>
+            </div>
+            <div class="service-card">
+                <h3>IoT & Connectivity</h3>
+                <p>From sensor networks to cloud platforms, we build the backbone for your connected products using protocols like MQTT, LoRaWAN, and Cellular.</p>
+            </div>
+            <div class="service-card">
+                <h3>Cloud Integration</h3>
+                <p>Architecting scalable cloud solutions on AWS and Azure to process, store, and analyze data from your devices.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- NEW: Why Choose Us Section -->
 <section class="section">
     <div class="container">
-        <h2>From the Blog</h2>
+        <div class="section-title">
+            <h2>Your Foundation for Innovation</h2>
+            <p>We are more than just engineers; we are your strategic partners in technology.</p>
+        </div>
+        <div class="features-list">
+            <p>✓ <strong>Holistic Approach:</strong> We seamlessly merge hardware and software, ensuring your entire system works in perfect harmony from day one.</p>
+            <p>✓ <strong>Proven Expertise:</strong> Our team has decades of experience delivering robust solutions for mission-critical applications.</p>
+            <p>✓ <strong>Collaborative Partnership:</strong> We work with you every step of the way, providing transparent communication and expert guidance.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Latest Post Section (This part stays the same) -->
+<section class="section section-highlight">
+    <div class="container">
+        <div class="section-title">
+            <h2>From the Blog</h2>
+        </div>
         {% assign latest_post = site.posts.first %}
         <div class="post-item-featured">
             <h3><a href="{{ latest_post.url | relative_url }}">{{ latest_post.title }}</a></h3>
