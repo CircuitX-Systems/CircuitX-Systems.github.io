@@ -1,5 +1,26 @@
 <footer>
     <div class="container">
-        <p>© {{ site.time | date: "%Y" }} Keystone Integrated Systems. The Foundation for Your Innovation.</p>
+        <div class="footer-content">
+            <div class="footer-about">
+                <h4>Keystone Systems</h4>
+                <p>The Foundation for Your Innovation.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigate</h4>
+                <ul>
+                    <li><a href="{{ '/' | relative_url }}">Home</a></li>
+                    <li><a href="{{ '/services.html' | relative_url }}">Services</a></li>
+                    <li><a href="{{ '/portfolio.html' | relative_url }}">Portfolio</a></li>
+
+                    <!-- ADD THIS LINE -->
+                    <li><a href="{{ '/about.html' | relative_url }}">About</a></li>
+
+                    <li><a href="{{ '/blog.html' | relative_url }}">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© {{ site.time | date: "%Y" }} Keystone Integrated Systems. All Rights Reserved.</p>
+        </div>
     </div>
 </footer>
