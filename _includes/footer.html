@@ -1,0 +1,37 @@
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h4>KEYSTONE</h4>
+                <p>The Foundation for Your Innovation. Engineering robust, end-to-end solutions for a connected world.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="{{ '/' | relative_url }}">Home</a></li>
+                    <li><a href="{{ '/services.html' | relative_url }}">Services</a></li>
+                    <li><a href="{{ '/portfolio.html' | relative_url }}">Portfolio</a></li>
+                    <li><a href="{{ '/blog.html' | relative_url }}">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <p>
+                    Have a project in mind?<br>
+                    <a href="mailto:contact@keystone-systems.com">contact@keystone-systems.com</a>
+                </p>
+            </div>
+            <div class="footer-column">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="https://twitter.com/{{ site.twitter_username }}" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://linkedin.com/company/{{ site.linkedin_company }}" title="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/{{ site.github_username }}" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© {% now "Y" %} Keystone Integrated Systems. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>

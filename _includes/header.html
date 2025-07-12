@@ -1,0 +1,13 @@
+<header class="site-header">
+    <div class="container">
+        <nav>
+            <div class="logo"><a href="{{ '/' | relative_url }}">KEYSTONE</a></div>
+            <ul class="nav-links">
+                <li><a href="{{ '/services.html' | relative_url }}" class="{% if page.url == '/services.html' %}active{% endif %}">Services</a></li>
+                <li><a href="{{ '/portfolio.html' | relative_url }}" class="{% if page.url == '/portfolio.html' %}active{% endif %}">Portfolio</a></li>
+                <li><a href="{{ '/blog.html' | relative_url }}" class="{% if page.url == '/blog.html' %}active{% endif %}">Blog</a></li>
+                <li><a href="mailto:contact@keystone-systems.com" class="button-primary">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
