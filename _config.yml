@@ -2,9 +2,17 @@
 title: Keystone Integrated Systems
 description: "The Foundation for Your Innovation. We engineer robust, end-to-end solutions, seamlessly fusing hardware and software."
 author: Keystone Systems
-url: "https://keystone-systems.github.io" # IMPORTANT: Make sure this is your correct GitHub Pages URL
+url: "https://keystone-systems.github.io" # IMPORTANT: Replace with your GitHub Pages URL
 
 # Build settings
-theme: null
+theme: null # We are using a custom theme, so we disable the default.
 plugins:
-  - jekyll-seo-tag
+  - jekyll-seo-tag # For automatic SEO metadata on every page.
+
+# Defaults for collections. This tells Jekyll to automatically use the 'default' layout
+# for all pages, so you don't have to specify it in every file.
+defaults:
+  - scope:
+      path: "" # An empty string here means all files in the project.
+    values:
+      layout: "default"
