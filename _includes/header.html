@@ -6,6 +6,10 @@
                 <!-- This Jekyll code automatically adds the 'active' class to the link of the current page -->
                 <li><a href="{{ '/services.html' | relative_url }}" class="{% if page.url == '/services.html' %}active{% endif %}">Services</a></li>
                 <li><a href="{{ '/portfolio.html' | relative_url }}" class="{% if page.url == '/portfolio.html' %}active{% endif %}">Portfolio</a></li>
+                
+                <!-- ADD THIS LINE -->
+                <li><a href="{{ '/about.html' | relative_url }}" class="{% if page.url == '/about.html' %}active{% endif %}">About</a></li>
+                
                 <li><a href="{{ '/blog.html' | relative_url }}" class="{% if page.url == '/blog.html' %}active{% endif %}">Blog</a></li>
                 <li><a href="mailto:contact@keystone-systems.com" class="button-contact">Contact Us</a></li>
             </ul>
