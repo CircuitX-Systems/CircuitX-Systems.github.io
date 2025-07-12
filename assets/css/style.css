@@ -121,3 +121,97 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 .service-card > *, .portfolio-card > * { position: relative; z-index: 2; }
 #back-to-top { position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; background-image: linear-gradient(90deg, var(--accent-color-1), var(--accent-color-2)); color: #fff; text-decoration: none; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 24px; box-shadow: 0 4px 15px var(--shadow-color); opacity: 0; transform: translateY(100px); transition: opacity 0.3s ease, transform 0.3s ease; z-index: 999; }
 #back-to-top.show { opacity: 1; transform: translateY(0); }
+
+/* --- Header and Navigation --- */
+.site-header {
+    background-color: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 15px 0;
+}
+
+.site-header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-header .logo {
+    font-weight: bold;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #333;
+}
+
+.site-header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.site-header nav ul li {
+    margin-left: 20px;
+}
+
+.site-header nav ul a {
+    text-decoration: none;
+    color: #555;
+}
+
+/* --- Featured Post on Homepage --- */
+.post-item-featured {
+    border: 1px solid #e5e5e5;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+/* --- Enhanced Footer --- */
+footer {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    margin-top: 50px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.footer-about, .footer-links {
+    flex-basis: 48%;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #555;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #e5e5e5;
+    padding-top: 20px;
+    font-size: 0.9em;
+}
+
+/* --- Basic Buttons (if you don't have them) --- */
+.button-primary {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
