@@ -239,3 +239,84 @@ footer {
 .hero-content h1 {
     font-size: 3em; /* Larger font for hero */
 }
+
+/* --- New Content Section Styling --- */
+
+/* A subtle background for alternating sections */
+.section-highlight {
+    background-color: #f8f9fa; /* The same as your footer */
+}
+
+/* A standardized title block for sections */
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    font-size: 1.1em;
+    color: #6c757d;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Services grid for the homepage */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    border: 1px solid #e5e5e5;
+    padding: 30px;
+    text-align: center;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.service-card h3 {
+    margin-top: 0;
+}
+
+/* Features list for homepage */
+.features-list {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.features-list p {
+    margin-bottom: 15px;
+}
+
+/* Detailed service items for the services page */
+.service-item-detailed {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+
+.service-item-detailed h2 {
+    margin-top: 0;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.service-item-detailed ul {
+    list-style: '✓ '; /* A simple checkmark for lists */
+    padding-left: 20px;
+}
+
+.service-item-detailed li {
+    margin-bottom: 10px;
+}
