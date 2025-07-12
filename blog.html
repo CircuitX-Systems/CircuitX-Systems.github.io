@@ -1,0 +1,25 @@
+---
+title: The Keystone Blog
+description: "Insights, articles, and news from our team of engineers on the latest in IoT, embedded systems, and technology integration."
+---
+<div class="page-header">
+    <div class="container">
+        <h1>The Keystone Blog</h1>
+        <p>Insights from our team on engineering, technology, and innovation.</p>
+    </div>
+</div>
+
+<section class="section">
+    <div class="container">
+        <div class="post-list">
+            {% for post in site.posts %}
+                <div class="post-item">
+                    <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+                    <p class="post-meta">{{ post.date | date: "%B %d, %Y" }}</p>
+                    <p>{{ post.excerpt }}</p>
+                    <a href="{{ post.url | relative_url }}" class="button-secondary">Read More →</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
