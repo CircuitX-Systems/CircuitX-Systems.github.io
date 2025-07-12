@@ -1,6 +1,6 @@
 /*
 =================================================================
-    KEYSTONE SYSTEMS - CONSOLIDATED STYLESHEET V4.0
+    KEYSTONE SYSTEMS - CONSOLIDATED STYLESHEET V5.0
 =================================================================
 */
 
@@ -11,7 +11,7 @@
 */
 
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@300;400;500;700&display=swap');
 
 :root {
     /* Light Mode Variables */
@@ -21,8 +21,8 @@
     --text-muted: #5a677d;
     --border-color: #dde4ed;
     --header-bg: rgba(255, 255, 255, 0.7);
-    --hero-overlay-color: rgba(25, 32, 44, 0.6); /* DARK overlay for light mode */
-    --hero-text-color: #ffffff; /* WHITE text for hero */
+    --hero-overlay-color: rgba(25, 32, 44, 0.6);
+    --hero-text-color: #ffffff;
     --footer-bg: #e9eef2;
     --shadow-color: rgba(107, 70, 193, 0.15);
     --spotlight-color: rgba(0, 124, 240, 0.2);
@@ -63,7 +63,7 @@ html {
 body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--bg-color);
-    color: var(--text-color); /* THIS IS THE FIX: A safe, default dark text color */
+    color: var(--text-color);
     margin: 0;
     padding: 0;
     line-height: 1.7;
@@ -79,7 +79,7 @@ body {
 }
 
 main {
-    padding-top: 80px; /* This is the fix for content hiding behind the sticky header */
+    padding-top: 80px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -172,7 +172,7 @@ nav {
 .button-secondary {
     display: inline-block;
     background-image: linear-gradient(90deg, var(--accent-color-1), var(--accent-color-2));
-    color: #ffffff !important; /* Important to override link colors */
+    color: #ffffff !important;
     text-decoration: none;
     border: none;
     font-weight: 700;
@@ -220,7 +220,7 @@ nav {
     text-align: center;
     padding: 120px 0;
     overflow: hidden;
-    color: var(--hero-text-color); /* FIX: Uses special white text for hero */
+    color: var(--hero-text-color);
 }
 
 .hero::before {
@@ -229,7 +229,7 @@ nav {
     top: 0; left: 0;
     width: 100%; height: 100%;
     z-index: -2;
-    background: url('../images/hero-background.jpg') center/cover no-repeat; /* Assumes you have this image */
+    background: url('../images/hero-background.jpg') center/cover no-repeat;
     animation: hero-zoom 20s ease-out forwards;
 }
 
@@ -239,13 +239,18 @@ nav {
     top: 0; left: 0;
     width: 100%; height: 100%;
     z-index: -1;
-    background: var(--hero-overlay-color); /* FIX: Uses a dark overlay */
+    background: var(--hero-overlay-color);
+}
+
+.hero h1, .hero .motto, .hero .hero-description {
+    position: relative;
+    z-index: 2;
 }
 
 .hero h1 {
     font-size: 4.5em;
     margin-bottom: 15px;
-    color: var(--hero-text-color); /* FIX: Explicitly white text */
+    color: var(--hero-text-color);
 }
 
 .hero .motto {
@@ -253,11 +258,11 @@ nav {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     margin-bottom: 35px;
-    color: var(--hero-text-color); /* FIX: Explicitly white text */
+    color: var(--hero-text-color);
 }
 
 .hero .motto strong {
-    font-weight: 600;
+    font-weight: 700;
     background-image: linear-gradient(90deg, var(--accent-color-1), var(--accent-color-2));
     -webkit-background-clip: text;
     background-clip: text;
@@ -270,11 +275,10 @@ nav {
     max-width: 750px;
     margin: 0 auto 40px auto;
     font-size: 1.2em;
-    color: var(--hero-text-color); /* FIX: Explicitly white text */
+    color: var(--hero-text-color);
     opacity: 0.9;
 }
 
-/* This is the header for internal pages like Services and Blog */
 .page-header {
     padding: 80px 0;
     text-align: center;
@@ -290,7 +294,7 @@ nav {
     max-width: 750px;
     margin: 0 auto 40px auto;
     font-size: 1.2em;
-    color: var(--text-muted); /* Uses muted text, not white */
+    color: var(--text-muted);
 }
 
 /*
@@ -303,7 +307,10 @@ nav {
     padding: 80px 0;
 }
 
-/* A standardized title block for sections */
+.section:nth-of-type(even) {
+    background-color: var(--card-color);
+}
+
 .section-title {
     text-align: center;
     margin-bottom: 60px;
@@ -333,7 +340,6 @@ nav {
     margin: 0 auto;
 }
 
-/* Services grid for the homepage */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -341,7 +347,7 @@ nav {
 }
 
 .service-card {
-    background-color: var(--card-color);
+    background-color: var(--bg-color);
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 35px;
@@ -354,11 +360,11 @@ nav {
 }
 
 .service-card h3 {
+    margin-top: 0;
     margin-bottom: 15px;
     font-size: 1.4em;
 }
 
-/* Detailed service items for the services page */
 .service-item-detailed {
     background: var(--card-color);
     border: 1px solid var(--border-color);
@@ -376,7 +382,7 @@ nav {
     display: inline-block;
 }
 .service-item-detailed h2::after {
-    display: none; /* Turn off the centered line for these headings */
+    display: none;
 }
 
 .service-item-detailed ul {
@@ -391,13 +397,105 @@ nav {
 
 /*
 =================================================================
-    7. BLOG & FOOTER STYLES
+    7. TESTIMONIALS & CTA
 =================================================================
 */
 
-/* Styles for blog list on /blog.html */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background-color: var(--bg-color);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-quote {
+    font-size: 1.2em;
+    font-style: italic;
+    color: var(--text-muted);
+    flex-grow: 1;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 20px;
+}
+
+.testimonial-quote::before {
+    content: '“';
+    font-family: 'Times New Roman', serif;
+    font-size: 5em;
+    color: var(--border-color);
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    z-index: 1;
+}
+
+.testimonial-author {
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.author-name {
+    display: block;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.author-title {
+    font-size: 0.9em;
+    color: var(--text-muted);
+}
+
+.cta-section {
+    background-image: linear-gradient(90deg, var(--accent-color-1), var(--accent-color-2));
+    color: #fff;
+    text-align: center;
+    padding: 80px 0;
+}
+
+.cta-section h2 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+.cta-section h2::after {
+    background: #fff;
+}
+
+.cta-section p {
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    opacity: 0.9;
+}
+
+.cta-section .button-primary {
+    background-image: none;
+    background-color: #fff;
+    color: var(--accent-color-1) !important;
+}
+.cta-section .button-primary:hover {
+    background-color: #e9eef2;
+}
+
+/*
+=================================================================
+    8. BLOG & FOOTER STYLES
+=================================================================
+*/
+
 .post-list .post-item {
-    background-color: var(--card-color);
+    background-color: var(--bg-color);
     padding: 40px;
     border-radius: 12px;
     border: 1px solid var(--border-color);
@@ -411,7 +509,7 @@ nav {
     border: none;
     padding: 0;
 }
-.post-list h2::after { display: none; } /* Remove centered line */
+.post-list h2::after { display: none; }
 
 .post-list h2 a {
     text-decoration: none;
@@ -426,7 +524,6 @@ nav {
     margin-bottom: 20px;
 }
 
-/* Styles for single post page (post.html) */
 .post-header {
     text-align: center;
     margin-bottom: 60px;
@@ -442,13 +539,11 @@ nav {
     font-size: 1.1em;
 }
 
-/* Footer */
 footer {
     background-color: var(--footer-bg);
     border-top: 1px solid var(--border-color);
     padding: 30px 0;
-    margin-top: 60px;
-    text-align: center;
+    margin-top: 0; /* Margin is now handled by the last section */
 }
 
 .footer-nav {
@@ -472,6 +567,7 @@ footer {
 }
 
 .footer-copyright {
+    text-align: center;
     margin: 0;
     font-size: 0.9em;
     color: var(--text-muted);
