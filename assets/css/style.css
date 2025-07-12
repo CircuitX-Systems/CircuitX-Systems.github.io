@@ -165,47 +165,39 @@ nav { display: flex; justify-content: space-between; align-items: center; }
     border-radius: 5px;
 }
 
-/* --- Enhanced and Compact Footer --- */
+/* --- Ultra-Compact Horizontal Footer --- */
 footer {
     background-color: #f8f9fa;
-    color: #6c757d;
-    padding-top: 25px;      /* Reduced from 40px */
-    padding-bottom: 15px;   /* Reduced from 20px */
-    margin-top: 50px;
     border-top: 1px solid #e5e5e5;
+    padding: 25px 0; /* Greatly reduced vertical padding */
+    margin-top: 60px;
+    text-align: center; /* Center all text content */
 }
 
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;    /* Reduced from 30px */
-}
-
-.footer-about, .footer-links {
-    flex-basis: 48%;
-}
-
-.footer-links ul {
+.footer-nav {
     list-style: none;
     padding: 0;
+    margin: 0 0 15px 0; /* Remove default margins, add a little space below the nav */
+    display: flex; /* THIS IS THE KEY: Makes list items horizontal */
+    justify-content: center; /* Centers the links within the line */
+    flex-wrap: wrap; /* Allows links to wrap on very small screens */
 }
 
-.footer-links li {
-    margin-bottom: 5px;     /* Reduced from 10px */
+.footer-nav li {
+    margin: 0 15px; /* Adds space BETWEEN the links */
 }
 
-.footer-links a {
+.footer-nav a {
     text-decoration: none;
     color: #555;
+    font-weight: 500;
 }
 
-.footer-bottom {
-    text-align: center;
-    border-top: 1px solid #e5e5e5;
-    padding-top: 15px;      /* Reduced from 20px */
+.footer-copyright {
+    margin: 0; /* Remove any default paragraph margin */
     font-size: 0.9em;
+    color: #6c757d;
 }
-
 /* --- Basic Buttons (if you don't have them) --- */
 .button-primary {
     display: inline-block;
