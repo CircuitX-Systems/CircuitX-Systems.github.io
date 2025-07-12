@@ -320,3 +320,7 @@ footer {
 .service-item-detailed li {
     margin-bottom: 10px;
 }
+/* --- Sticky Header Fix --- */
+main {
+    padding-top: 80px; /* This value should be slightly more than your header's height */
+}
