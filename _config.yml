@@ -1,12 +1,8 @@
+# _config.yml
 title: Keystone Integrated Systems
-description: "A trusted product engineering services company specializing in embedded systems, IoT development, and system integration for global clients."
+description: "The Foundation for Your Innovation. We engineer robust, end-to-end solutions, seamlessly fusing hardware and software."
 author: Keystone Systems
-url: "https://keystone-systems.github.io" # Make sure this is your correct GitHub Pages URL
-
-# Social Media Links (for the footer)
-twitter_username: your_twitter_handle
-linkedin_company: your_linkedin_company_name
-github_username:  your_github_username
+url: "https://keystone-systems.github.io" # IMPORTANT: Make sure this is your correct GitHub Pages URL
 
 # Build settings
 theme: null
