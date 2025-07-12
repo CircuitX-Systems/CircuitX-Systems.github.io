@@ -4,23 +4,27 @@ on:
   push:
     branches: ["main"]
 
-jobs: 
+# ADD THIS BLOCK TO GRANT WRITE PERMISSIONS
+permissions:
+  contents: write
+
+jobs:
   generate-lockfile:
     runs-on: ubuntu-latest
     steps:
-      # 1. Check out the repository so we can access the Gemfile
+      # 1. Check out the repository
       - name: Checkout
         uses: actions/checkout@v4
 
-      # 2. Set up Ruby and install gems from the Gemfile.
-      # This is the step that CREATES the Gemfile.lock.
+      # 2. Set up Ruby and create the Gemfile.lock
       - name: Setup Ruby and Bundle Install
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1'
-          bundler-cache: true # This runs 'bundle install'
+          bundler-cache: true
 
       # 3. Commit the new Gemfile.lock back to the repository
+      #    This step will now have permission to work.
       - name: Commit Gemfile.lock
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
