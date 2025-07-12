@@ -1,33 +1,77 @@
-name: Deploy Keystone Website to GitHub Pages
+# Name of the workflow as it will appear in the "Actions" tab
+name: Deploy Keystone Site to GitHub Pages
+
+# Controls when the workflow will run
 on:
+  # Runs on pushes targeting the main (or master) branch
   push:
     branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+
+# NEW & CRITICAL: This block grants the necessary permissions for the deployment job.
+# This is what solves the "operation was canceled" error.
 permissions:
   contents: read
   pages: write
   id-token: write
+
+# Allows only one concurrent deployment, canceling older runs.
+# This is a best practice for GitHub Pages deployments.
 concurrency:
   group: "pages"
   cancel-in-progress: true
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  # The "build" job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Check out your repository's code so the job can access it
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Step 2: Set up the Ruby programming language environment needed by Jekyll
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1' # This version works well with the latest GitHub Pages gem
+          bundler-cache: true # Automatically runs 'bundle install' and caches gems
+
+      # Step 3: Configure the GitHub Pages environment
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v4
+
+      # Step 4: Build the Jekyll site
+      - name: Build with Jekyll
+        # Uses the 'bundle exec' command to build the site using the gems from your Gemfile
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
+
+      # Step 5: Upload the built site as an artifact for the next job to use
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+
+  # The "deploy" job
   deploy:
+    # Set the environment for the deployment
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    
+    # This job runs on a fresh machine
     runs-on: ubuntu-latest
+    
+    # This job depends on the "build" job finishing successfully
+    needs: build
+    
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./
-          destination: ./_site
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      # This is the final step that takes the artifact from the build job
+      # and deploys it to your live GitHub Pages URL.
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
