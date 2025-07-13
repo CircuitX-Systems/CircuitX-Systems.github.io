@@ -1,10 +1,7 @@
-// Keystone Systems - main.js (V3 - Merged and Upgraded)
+// Keystone Systems - main.js (V4 - Enhanced and Optimized)
 
 document.addEventListener('DOMContentLoaded', () => {
-
-    // --- 1. NEW: Global Interactive Background Spotlight ---
-    // This creates the subtle spotlight that follows the cursor across the whole page.
-    // It works with the ::before pseudo-element styled in the CSS.
+    // 1. Global Interactive Background Spotlight
     document.addEventListener('mousemove', (e) => {
         window.requestAnimationFrame(() => {
             document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
@@ -12,8 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 2. EXISTING: Scroll-Triggered Section Animations ---
-    // This makes content sections fade in as you scroll down.
+    // 2. Scroll-Triggered Section Animations (Fade In)
     const scrollObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -24,8 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.1 });
     document.querySelectorAll('.section').forEach(section => scrollObserver.observe(section));
 
-    // --- 3. EXISTING: Interactive Card Spotlight ---
-    // This creates the spotlight effect specifically on service and portfolio cards.
+    // 3. Interactive Card Spotlight
     document.querySelectorAll('.service-card, .portfolio-card').forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
@@ -36,8 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 4. EXISTING: Smooth Scrolling for Anchor Links ---
-    // This handles smooth scrolling for links like <a href="#section">.
+    // 4. Smooth Scrolling for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -49,22 +43,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 5. EXISTING: "Back to Top" Button Visibility ---
-    // This shows and hides the "Back to Top" button.
+    // 5. Back to Top Button Visibility (Throttled)
     const backToTopButton = document.getElementById('back-to-top');
     if (backToTopButton) {
+        let ticking = false;
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.classList.add('show');
-            } else {
-                backToTopButton.classList.remove('show');
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    backToTopButton.classList.toggle('show', window.scrollY > 300);
+                    ticking = false;
+                });
+                ticking = true;
             }
         });
-        // The click event for this button is already in your default.html,
-        // but it's good practice to have it here too.
         backToTopButton.addEventListener('click', function(e) {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // 6. Mobile Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
     }
 });
