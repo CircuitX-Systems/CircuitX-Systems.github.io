@@ -1,33 +1,40 @@
 <header>
-    <div class="container">
-        <nav>
-            <a href="{{ '/' | relative_url }}" class="logo-link" aria-label="Keystone Systems Homepage">
-                <svg class="logo-svg" viewBox="0 0 190 40" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="var(--accent-color-1)"></stop>
-                            <stop offset="100%" stop-color="var(--accent-color-2)"></stop>
-                        </linearGradient>
-                    </defs>
-                    <path d="M0 0 H40 V40 H0 Z" fill="url(#logo-gradient)"></path>
-                    <path d="M10 10 H20 V15 H15 V25 H20 V30 H10 Z" fill="var(--bg-color)"></path>
-                    <text x="50" y="29" font-family="Poppins, sans-serif" font-size="24" font-weight="600" fill="var(--text-color)">KEYSTONE</text>
-                </svg>
-            </a>
-            <ul class="nav-links">
-                <li class="dropdown">
-                    <a href="{{ '/services.html' | relative_url }}" class="{% if page.url and page.url == '/services.html' %}active{% endif %}">Services <span class="dropdown-arrow">▼</span></a>
-                    <ul class="dropdown-content">
-                        <li><a href="{{ '/services.html' | relative_url }}#embedded">Embedded Systems</a></li>
-                        <li><a href="{{ '/services.html' | relative_url }}#iot">IoT & Connectivity</a></li>
-                        <li><a href="{{ '/services.html' | relative_url }}#cloud">Cloud Integration</a></li>
-                    </ul>
-                </li>
-                <li><a href="{{ '/portfolio.html' | relative_url }}" class="{% if page.url and page.url == '/portfolio.html' %}active{% endif %}">Portfolio</a></li>
-                <li><a href="{{ '/about.html' | relative_url }}" class="{% if page.url and page.url == '/about.html' %}active{% endif %}">About</a></li>
-                <li><a href="{{ '/blog.html' | relative_url }}" class="{% if page.url and page.url == '/blog.html' %}active{% endif %}">Blog</a></li>
-                <li><a href="{{ '/contact.html' | relative_url }}" class="button-contact">Contact Us</a></li>
-            </ul>
-        </nav>
-    </div>
+  <div class="container">
+    <nav>
+      <a href="{{ '/' | relative_url }}" class="logo-link" aria-label="Keystone Systems Homepage">
+        <svg class="logo-svg" viewBox="0 0 190 40" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="var(--accent-color-1)"></stop>
+              <stop offset="100%" stop-color="var(--accent-color-2)"></stop>
+            </linearGradient>
+          </defs>
+          <path d="M0 0 H40 V40 H0 Z" fill="url(#logo-gradient)"></path>
+          <path d="M10 10 H20 V15 H15 V25 H20 V30 H10 Z" fill="var(--bg-color)"></path>
+          <text x="50" y="29" font-family="Poppins, sans-serif" font-size="24" font-weight="600" fill="var(--text-color)">KEYSTONE</text>
+        </svg>
+      </a>
+
+      <!-- Mobile Menu Toggle -->
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+
+      <!-- Navigation Links -->
+      <ul class="nav-links">
+        <li class="dropdown">
+          <a href="{{ '/services.html' | relative_url }}" class="{% if page.url == '/services.html' %}active{% endif %}">
+            Services <span class="dropdown-arrow">▼</span>
+          </a>
+          <ul class="dropdown-content">
+            <li><a href="{{ '/services.html' | relative_url }}#embedded">Embedded Systems</a></li>
+            <li><a href="{{ '/services.html' | relative_url }}#iot">IoT & Connectivity</a></li>
+            <li><a href="{{ '/services.html' | relative_url }}#cloud">Cloud Integration</a></li>
+          </ul>
+        </li>
+        <li><a href="{{ '/portfolio.html' | relative_url }}" class="{% if page.url == '/portfolio.html' %}active{% endif %}">Portfolio</a></li>
+        <li><a href="{{ '/about.html' | relative_url }}" class="{% if page.url == '/about.html' %}active{% endif %}">About</a></li>
+        <li><a href="{{ '/blog.html' | relative_url }}" class="{% if page.url == '/blog.html' %}active{% endif %}">Blog</a></li>
+        <li><a href="{{ '/contact.html' | relative_url }}" class="button-contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
