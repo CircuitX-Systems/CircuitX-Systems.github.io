@@ -1,4 +1,4 @@
-// Keystone Systems - main.js (V4 - Enhanced and Optimized)
+// CircuitX Systems - main.js (V4 - Enhanced and Optimized)
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Global Interactive Background Spotlight
