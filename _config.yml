@@ -2,7 +2,7 @@
 title: CircuitX Systems
 description: "The Foundation for Your Innovation. We engineer robust, end-to-end solutions, seamlessly fusing hardware and software."
 author: CircuitX Systems
-url: "https://Circuitx-Systems.github.io" # IMPORTANT: Replace with your GitHub Pages URL
+url: "https://circuitx-systems.github.io" # IMPORTANT: Replace with your GitHub Pages URL
 
 # Build settings
 theme: null # We are using a custom theme, so we disable the default.
@@ -16,3 +16,4 @@ defaults:
       path: "" # An empty string here means all files in the project.
     values:
       layout: "default"
+
