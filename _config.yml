@@ -1,5 +1,5 @@
 # _config.yml
-title: Keystone Integrated Systems
+title: CircuitX Systems
 description: "The Foundation for Your Innovation. We engineer robust, end-to-end solutions, seamlessly fusing hardware and software."
 author: Keystone Systems
 url: "https://keystone-systems.github.io" # IMPORTANT: Replace with your GitHub Pages URL
@@ -16,3 +16,4 @@ defaults:
       path: "" # An empty string here means all files in the project.
     values:
       layout: "default"
+
