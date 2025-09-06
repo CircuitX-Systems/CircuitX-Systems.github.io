@@ -344,3 +344,55 @@ nav {
 
 /* Remaining sections like testimonials, CTA, blog, footer, typography remain identical to original */
 
+/* ============================= */
+/* FOOTER STYLES - CIRCUITX SYSTEMS */
+/* ============================= */
+
+footer.site-footer {
+    background-color: var(--footer-bg); /* uses your theme variable */
+    border-top: 1px solid var(--border-color);
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-muted);
+}
+
+footer.site-footer .footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* wraps links on small screens */
+    gap: 25px; /* spacing between links */
+    margin-bottom: 15px;
+}
+
+footer.site-footer .footer-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+footer.site-footer .footer-links a:hover {
+    color: var(--text-color);
+}
+
+footer.site-footer p.footer-copyright {
+    margin: 0;
+    font-size: 0.9em;
+    color: var(--text-muted);
+}
+
+/* ============================= */
+/* RESPONSIVE ADJUSTMENTS */
+/* ============================= */
+@media (max-width: 600px) {
+    footer.site-footer .footer-links {
+        gap: 15px;
+    }
+
+    footer.site-footer p.footer-copyright {
+        font-size: 0.8em;
+    }
+}
+
+
